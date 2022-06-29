@@ -21,6 +21,8 @@ gem 'puma', '~> 3.11'
 
 # BEGIN ADDED GEMS
 gem 'faker'
+gem 'will_paginate','~> 3.0'
+# gem 'shoulda_matchers'
 # END ADDED GEMS
 
 # Use Capistrano for deployment
@@ -39,9 +41,14 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'factory_bot_rails'
+  # gem 'shoulda-matchers'
 end
 
 group :development do
+end
+
+group :test do
+  gem 'shoulda-matchers'
 end
 
 

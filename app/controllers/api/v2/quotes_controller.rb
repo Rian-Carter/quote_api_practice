@@ -3,19 +3,12 @@ module Api
     class QuotesController < ApplicationController
 
       def index
-        # search = params[:search] 2
-        # @quotes = Quote.all.order("author DESC")
-        # @quotes = Quote.all.order("author ASC")
-        # @quotes = Quote.all.order("id DESC")
-        @quotes = Quote.all.order("id ASC")
-        # @quotes = Quote.all
-        # @quotes = Quote.search(search) 2
+        # @quotes = Quote.all.order("author DESC").paginate(:page => params[:page], :per_page => 5)
+        # @quotes = Quote.all.order("author ASC").paginate(:page => params[:page], :per_page => 5)
+        # @quotes = Quote.all.order("id DESC").paginate(:page => params[:page], :per_page => 5)
+        @quotes = Quote.all.order("id ASC").paginate(:page => params[:page], :per_page => 5)
         json_response(@quotes)
 
-        # name = params[:name] 3
-        # binding.pry 3
-        # @quotes = Quote.search(name) 3
-        # json_response(@quotes) 3
       end
 
       def show

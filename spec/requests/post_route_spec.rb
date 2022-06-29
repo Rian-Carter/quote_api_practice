@@ -3,7 +3,8 @@ require 'rails_helper'
 describe "post a quote route", :type => :request do
 
   before do
-    post '/quotes', params: { :author => 'test_author', :content => 'test_content' }
+    # post '/api/v1/quotes', params: { :author => 'test_author', :content => 'test_content' }
+    post '/api/v2/quotes', params: { :author => 'test_author', :content => 'test_content' }
   end
 
   it 'returns the author name' do
